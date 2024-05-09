@@ -27,7 +27,15 @@ def main():
     # Create an account
     firstName = input("first name: ")
     lastName = input("last name: ")
+    
+    # Setup a default email, but let them change it.
     email = firstName + "." + lastName + "@outlook.com"
+    print(f"Your default email is {email}. Would you like to change this?")
+    change_email = input("y/n? ")
+    if change_email.toupper() == "Y":
+        email = input("Please input a new email: ")
+        print("New email set. continuing!")
+
     password = input("password: ")
     dob = input("date of birth: ")
     pin = input("PIN: ")
