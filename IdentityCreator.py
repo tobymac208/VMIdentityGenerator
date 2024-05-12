@@ -1,3 +1,7 @@
+import subprocess
+from PasswordGenerator import Generate
+
+
 class Identity:
     # email, first name, last name, password, DOB, PIN
     '''
@@ -32,11 +36,12 @@ def main():
     email = firstName + "." + lastName + "@outlook.com"
     print(f"Your default email is {email}. Would you like to change this?")
     change_email = input("y/n? ")
-    if change_email.toupper() == "Y":
+    if change_email.upper() == "Y":
         email = input("Please input a new email: ")
         print("New email set. continuing!")
 
-    password = input("password: ")
+    password = Generate.password_generator()
+    
     dob = input("date of birth: ")
     pin = input("PIN: ")
     # initialize the new object
@@ -46,5 +51,5 @@ def main():
     with open(f"{FILE_PATH}{firstName[0]}{lastName}.txt", "w+") as f:
         f.write(account.identity_details() + "\n")
 
-
-main()
+if __name__ == "__main__":
+    main()
