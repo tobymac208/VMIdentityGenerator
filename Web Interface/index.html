@@ -39,8 +39,8 @@
       <h2>Download identity file</h2>
       <!-- Download form that allows the user to download the file once the fields have been filled. Requires user to fill out fields first. -->
       <form onsubmit="download(this['filename'].value, this['identityInformation'].value)">
-        <input type="text" name="filename" placeholder="example.txt" readonly required />
-        <textarea name="identityInformation" readonly required></textarea> <!-- This is filled once the user enters data into the field. -->
+        <input type="text" name="filename" id="filename" placeholder="example.txt" readonly required />
+        <textarea name="identityInformation" id="identityInformation" readonly required></textarea> <!-- This is filled once the user enters data into the field. -->
         <input type="submit" value="Download" />
       </form>
     </div>

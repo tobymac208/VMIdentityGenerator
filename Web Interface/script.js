@@ -35,6 +35,11 @@ const createIdentity = (event) => {
     return;
   }
 
+  // Collect all of the information and send it over to the textarea element on the page. Allows the user to save all of the information.
+  let identityInformation = "Name: " + firstName + " " + lastName + "\nEmail: " + email + "\nPassword: " + password + "\nDate of birth: " + dob + "\nPIN: " + pin;
+  document.getElementById("identityInformation").value = identityInformation; // Populates the field on the page.
+  document.getElementById("filename").value = firstName[0] + lastName + ".txt"; // Generates a filename
+
   // Further processing (e.g., sending data to the server) should go here.
   console.log({
     firstName,
