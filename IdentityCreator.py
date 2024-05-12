@@ -31,6 +31,7 @@ def main():
     # Create an account
     firstName = input("first name: ")
     lastName = input("last name: ")
+    print(f"Name of {firstName} {lastName} set!")
     
     # Setup a default email, but let them change it.
     email = firstName + "." + lastName + "@outlook.com"
@@ -38,18 +39,36 @@ def main():
     change_email = input("y/n? ")
     if change_email.upper() == "Y":
         email = input("Please input a new email: ")
-        print("New email set. continuing!")
+    print("Email set!")
 
+    # Generate a password.
     password = Generate.password_generator()
+    print("Password set!")
     
     dob = input("date of birth: ")
-    pin = input("PIN: ")
+    print("DOB set!")
+    
+    # Get a PIN from the user.
+    PINFirstAttempt = input("PIN: ")
+    PINSecondAttempt = input("Re-enter your PIN: ")
+    while PINFirstAttempt != PINSecondAttempt:
+        print("The PINs do not match. Please re-enter your PIN!")
+        PINFirstAttempt = input("PIN: ")
+        PINSecondAttempt = input("Re-enter your PIN: ")
+    pin = PINFirstAttempt
+    print("PIN Set!")
+
+
     # initialize the new object
     account = Identity(firstName, lastName, email, password, dob, pin)
+    print("Account created!")
+
+    FILE_GENERATED_NAME = f"{FILE_PATH}{firstName[0]}{lastName}.txt"
 
     # Add the identity to a new identity file.
-    with open(f"{FILE_PATH}{firstName[0]}{lastName}.txt", "w+") as f:
+    with open(FILE_GENERATED_NAME, "w+") as f:
         f.write(account.identity_details() + "\n")
+    print(f"File generated for identity. File name: {FILE_GENERATED_NAME}")
 
 if __name__ == "__main__":
     main()
