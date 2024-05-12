@@ -1,58 +1,63 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* Light blue background */
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff; /* Light blue background */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .form-container {
-    background-color: #ffffff; /* White background for the form */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
+  background-color: #ffffff; /* White background for the form */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
 }
 
 .form-container h2 {
-    color: #1e90ff; /* Dodger blue */
-    margin-bottom: 20px;
+  color: #1e90ff; /* Dodger blue */
+  margin-bottom: 20px;
 }
 
 .form-container label {
-    display: block;
-    margin: 10px 0 5px;
-    text-align: left;
-    color: #1e90ff; /* Dodger blue */
+  display: block;
+  margin: 10px 0 5px;
+  text-align: left;
+  color: #1e90ff; /* Dodger blue */
 }
 
 .form-container input[type="text"],
 .form-container input[type="email"],
 .form-container input[type="password"],
 .form-container input[type="date"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .form-container input[type="submit"] {
-    background-color: #1e90ff; /* Dodger blue */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  background-color: #1e90ff; /* Dodger blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .form-container input[type="submit"]:hover {
-    background-color: #1c86ee; /* Slightly darker blue */
+  background-color: #1c86ee; /* Slightly darker blue */
+}
+
+form * {
+  display: block;
+  margin: 10px;
 }

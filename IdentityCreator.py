@@ -1,4 +1,3 @@
-import subprocess
 from PasswordGenerator import Generate
 
 

@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>VMIdentityGenerator! Web version</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
     <div class="form-container">
-        <h2>VMIdentityGenerator!</h2>
-        <form class="form" id="identityForm">
-            <label for="fName">First Name: </label>
-            <input type="text" name="fName" id="fName" required>
+      <h2>VMIdentityGenerator!</h2>
+      <form class="form" id="identityForm">
+        <label for="fName">First Name: </label>
+        <input type="text" name="fName" id="fName" required />
 
-            <label for="lName">Last Name: </label>
-            <input type="text" name="lName" id="lName" required>
+        <label for="lName">Last Name: </label>
+        <input type="text" name="lName" id="lName" required />
 
-            <label for="email">Email: </label>
-            <input type="email" name="email" id="email" required>
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" required />
 
-            <label for="password">Password: </label>
-            <input type="password" name="password" id="password" required>
-            <label for="passwordVerify">Re-enter Password: </label>
-            <input type="password" name="passwordVerify" id="passwordVerify" required>
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" required />
+        <label for="passwordVerify">Re-enter Password: </label>
+        <input
+          type="password"
+          name="passwordVerify"
+          id="passwordVerify"
+          required
+        />
 
-            <label for="dob">Date of birth: </label>
-            <input type="date" name="dob" id="dob" required>
+        <label for="dob">Date of birth: </label>
+        <input type="date" name="dob" id="dob" required />
 
-            <label for="pin">PIN number: </label>
-            <input type="password" name="pin" id="pin" required>
+        <label for="pin">PIN number: </label>
+        <input type="password" name="pin" id="pin" required />
 
-            <input type="submit" name="submit" id="submit">
+        <input type="submit" name="submit" id="submit" />
+      </form>
 
-            <a href="data:application/xml;charset=utf-8" download="here.html">Save</a>
-        </form>
+      <h2>Download identity file</h2>
+      <!-- Download form that allows the user to download the file once the fields have been filled. Requires user to fill out fields first. -->
+      <form onsubmit="download(this['filename'].value, this['identityInformation'].value)">
+        <input type="text" name="filename" placeholder="example.txt" readonly required />
+        <textarea name="identityInformation" readonly required></textarea> <!-- This is filled once the user enters data into the field. -->
+        <input type="submit" value="Download" />
+      </form>
     </div>
     <script src="./script.js" type="text/javascript"></script>
-</body>
+  </body>
 </html>
