@@ -7,5 +7,5 @@ I commonly used this if I was spinning up a virtual machine. I got tired of comi
 ## Web Version!
 ![web version](https://github.com/tobymac208/VMIdentityGenerator/blob/main/About/Web_version_example.png)
 
-# CLI Version!
+## CLI Version!
 ![cli version](https://github.com/tobymac208/VMIdentityGenerator/blob/main/About/example.png)
