@@ -25,13 +25,15 @@ const createIdentity = (event) => {
   let dob = document.getElementById("dob").value;
   let pin = document.getElementById("pin").value;
 
+  const PIN_MIN_LENGTH = 4
+
   if (password !== passwordVerify) {
     alert("Passwords do not match!");
     return;
   }
 
-  if (pin.length < 4 || isNaN(pin)) {
-    alert("PIN must be at least 4 digits long and numeric.");
+  if (pin.length < PIN_MIN_LENGTH || isNaN(pin)) {
+    alert(`PIN must be at least ${PIN_MIN_LENGTH} digits long and numeric.`);
     return;
   }
 
