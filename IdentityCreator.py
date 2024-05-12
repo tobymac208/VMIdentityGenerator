@@ -25,8 +25,6 @@ class Identity:
         return f"Name: {self.fName} {self.lName}\nEmail: {self.email}\nDate of Birth: {self.dob}\nPassword: {self.password}\nPIN: {self.pin}"
 
 
-FILE_PATH = "Identities/"
-
 def main():
     # Create an account
     firstName = input("first name: ")
@@ -63,12 +61,14 @@ def main():
     account = Identity(firstName, lastName, email, password, dob, pin)
     print("Account created!")
 
+    FILE_PATH = "Identities/"
     FILE_GENERATED_NAME = f"{FILE_PATH}{firstName[0]}{lastName}.txt"
 
     # Add the identity to a new identity file.
     with open(FILE_GENERATED_NAME, "w+") as f:
         f.write(account.identity_details() + "\n")
     print(f"File generated for identity. File name: {FILE_GENERATED_NAME}")
+
 
 if __name__ == "__main__":
     main()
