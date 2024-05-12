@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VMIdentityGenerator! Web version</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Light blue background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .form-container {
+            background-color: #ffffff; /* White background for the form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .form-container h2 {
+            color: #1e90ff; /* Dodger blue */
+            margin-bottom: 20px;
+        }
+        
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+            text-align: left;
+            color: #1e90ff; /* Dodger blue */
+        }
+        
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="password"],
+        .form-container input[type="date"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .form-container input[type="submit"] {
+            background-color: #1e90ff; /* Dodger blue */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .form-container input[type="submit"]:hover {
+            background-color: #1c86ee; /* Slightly darker blue */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>VMIdentityGenerator!</h2>
+        <form class="form" id="identityForm">
+            <label for="fName">First Name: </label>
+            <input type="text" name="fName" id="fName" required>
+
+            <label for="lName">Last Name: </label>
+            <input type="text" name="lName" id="lName" required>
+
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password" required>
+            <label for="passwordVerify">Re-enter Password: </label>
+            <input type="password" name="passwordVerify" id="passwordVerify" required>
+
+            <label for="dob">Date of birth: </label>
+            <input type="date" name="dob" id="dob" required>
+
+            <label for="pin">PIN number: </label>
+            <input type="password" name="pin" id="pin" required>
+
+            <input type="submit" name="submit" id="submit">
+
+            <a href="data:application/xml;charset=utf-8" download="here.html">Save</a>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        const createIdentity = (event) => {
+            event.preventDefault();
+
+            let firstName = document.getElementById("fName").value.trim();
+            let lastName = document.getElementById("lName").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let passwordVerify = document.getElementById("passwordVerify").value;
+            let dob = document.getElementById("dob").value;
+            let pin = document.getElementById("pin").value;
+
+            if (password !== passwordVerify) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            if (pin.length < 4 || isNaN(pin)) {
+                alert("PIN must be at least 4 digits long and numeric.");
+                return;
+            }
+
+            // Further processing (e.g., sending data to the server) should go here.
+            console.log({
+                firstName,
+                lastName,
+                email,
+                password, // In real applications, never log or expose passwords.
+                dob,
+                pin
+            });
+        }
+
+        document.getElementById("identityForm").addEventListener("submit", createIdentity);
+    </script>
+</body>
+</html>
