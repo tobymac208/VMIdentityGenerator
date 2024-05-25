@@ -1,3 +1,5 @@
 #!/bin/bash
 
+cd ./Executables
+
 python3 displayusers.py

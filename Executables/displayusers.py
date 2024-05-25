@@ -4,7 +4,7 @@ import os
 def main():
     all_data_concat = ""
 
-    FILE_PATH = "./Identities/"
+    FILE_PATH = "../Identities/"
     file_list = os.listdir(FILE_PATH)
 
     for item in file_list:
