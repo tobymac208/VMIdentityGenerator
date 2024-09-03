@@ -1,6 +1,5 @@
 import os
 
-
 def main():
     all_data_concat = ""
 

@@ -5,8 +5,18 @@
 '''
 import random as rn
 
+def create_phrase_password() -> str:
+    '''
+    Static function. Isn't specific to a class.
 
-def password_generator():
+    Creates a password generated as a phrase. For instance "where-have-you-gone!" would be a password
+        
+    Arguments:
+    Returns: 
+    '''
+    pass
+
+def create_long_password():
     # Define what type of characters will be chosen.
     CHARACTERS_FOR_PASSWORD = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890$!@#'
     REQUIRED_LENGTH_OF_PASSWORD = 10
