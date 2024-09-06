@@ -3,6 +3,7 @@
     Generates a strong, random password.
     Author: Niklas Fernandez
 '''
+
 import random as rn
 
 def create_phrase_password() -> str:
@@ -14,9 +15,26 @@ def create_phrase_password() -> str:
     Arguments:
     Returns: 
     '''
-    pass
+    returns = None
 
-def create_long_password():
+    # read the list of words
+    wordlist = None
+    use_words = []
+    number_to_add = rn.randint(1, 150000)
+
+    WORDS_IN_PASSWORD = 4
+
+    with open("PasswordGenerator/wordlist.txt", "r") as f:
+        wordlist = f.readlines()
+    
+    for char in range(WORDS_IN_PASSWORD):
+        use_words.append(rn.choice(wordlist).strip())
+    
+    returns = f"{use_words[0]}-{use_words[1]}-{use_words[2]}-{use_words[3]}{number_to_add}"
+    return returns
+
+
+def create_long_password() -> str:
     # Define what type of characters will be chosen.
     CHARACTERS_FOR_PASSWORD = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890$!@#'
     REQUIRED_LENGTH_OF_PASSWORD = 10

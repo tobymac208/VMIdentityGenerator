@@ -46,7 +46,8 @@ class Identity:
     
     def get_password(self) -> str:
         # Generate a password.
-        password = Generate.create_long_password()
+        password = Generate.create_phrase_password()
+        print("The password has been generated and can be found in the file.")
         
         return password
     
