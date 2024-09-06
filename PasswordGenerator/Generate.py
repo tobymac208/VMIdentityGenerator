@@ -20,18 +20,19 @@ def create_long_password():
     # Define what type of characters will be chosen.
     CHARACTERS_FOR_PASSWORD = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIKLMNOPQRSTUVWXYZ1234567890$!@#'
     REQUIRED_LENGTH_OF_PASSWORD = 10
+    MAXIMUM_LENGTH_OF_PASSWORD = 100
 
     length_of_password = REQUIRED_LENGTH_OF_PASSWORD
     generated_password = ''
 
     try:
         # Determine how many characters will be in the password.
-        length_of_password = int(input(f'Number of characters for password (>= {REQUIRED_LENGTH_OF_PASSWORD}): '))
+        length_of_password = int(input(f'Number of characters for password (>= {REQUIRED_LENGTH_OF_PASSWORD} and <= {MAXIMUM_LENGTH_OF_PASSWORD}): '))
     except ValueError:
         print(f'Invalid character entered. Must be a number. Default length is {length_of_password}.')
     
-    if length_of_password < REQUIRED_LENGTH_OF_PASSWORD:
-        print(f'The length must be at least {REQUIRED_LENGTH_OF_PASSWORD}.\nGenerating a password that is long enough.')
+    if length_of_password < REQUIRED_LENGTH_OF_PASSWORD or length_of_password > MAXIMUM_LENGTH_OF_PASSWORD:
+        print(f'The length must be at least {REQUIRED_LENGTH_OF_PASSWORD} and cannot exceed {MAXIMUM_LENGTH_OF_PASSWORD} characters.\nGenerating a password that is long enough.')
 
         # Force the length to be at least at long as is required characters.
         length_of_password = REQUIRED_LENGTH_OF_PASSWORD
