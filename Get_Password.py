@@ -1,4 +1,4 @@
 from PasswordGenerator import Generate
 
-pwd = Generate.create_long_password()
+pwd = Generate.create_phrase_password()
 print(pwd)
