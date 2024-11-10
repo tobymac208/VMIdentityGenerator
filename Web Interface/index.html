@@ -1,59 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Identity Creator</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <title>VM Identity Creator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>Identity Creator</h1>
-        
-        <!-- Identity Form -->
-        <div id="identityForm">
-            <div class="form-group">
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" readonly>
-                <button id="changeEmail">Change Email</button>
-            </div>
-            
-            <div class="form-group">
-                <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="pin">PIN:</label>
-                <input type="password" id="pin" maxlength="4" pattern="\d{4}" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="confirmPin">Confirm PIN:</label>
-                <input type="password" id="confirmPin" maxlength="4" pattern="\d{4}" required>
-            </div>
+  <div class="container">
+    <h1>VM Identity Creator</h1>
 
-            <button id="generateIdentity">Create Identity</button>
-        </div>
+    <div id="identityForm">
+      <div class="form-group">
+        <label for="vmName">Virtual Machine Name:</label>
+        <input type="text" id="vmName" maxlength="50" pattern="[A-Za-z0-9\s-]+" required>
+        <small class="input-help">Enter the name of the Virtual Machine this identity is for</small>
+      </div>
 
-        <!-- Results Display -->
-        <div id="results" class="hidden">
-            <h2>Generated Identity</h2>
-            <div id="identityDetails"></div>
-            <button id="downloadIdentity">Download Identity File</button>
-            <button id="createNew">Create New Identity</button>
-        </div>
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" maxlength="50" pattern="[A-Za-z\s-]+" required>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" maxlength="50" pattern="[A-Za-z\s-]+" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" maxlength="100" readonly>
+        <button type="button" id="changeEmail" class="secondary-button">Change Email</button>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required>
+        <small class="input-help">Must be a past date</small>
+      </div>
+
+      <div class="form-group">
+        <label for="pin">PIN (4 digits):</label>
+        <input type="password" id="pin" maxlength="4" pattern="\d{4}" inputmode="numeric" autocomplete="new-password"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPin">Confirm PIN:</label>
+        <input type="password" id="confirmPin" maxlength="4" pattern="\d{4}" inputmode="numeric"
+          autocomplete="new-password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" minlength="8" maxlength="128" autocomplete="new-password" required>
+        <small class="password-requirements">
+          Password must contain at least 8 characters, including uppercase, lowercase, numbers, and special characters
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" minlength="8" maxlength="128" autocomplete="new-password" required>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" id="generatePassword">
+          Generate secure password instead
+        </label>
+      </div>
+
+      <button type="button" id="generateIdentity" class="primary-button">Create Identity</button>
     </div>
-    <script src="script.js"></script>
+
+    <div id="results" class="hidden">
+      <h2>Generated Identity</h2>
+      <div id="identityDetails" class="details-panel"></div>
+      <div class="button-group">
+        <button type="button" id="downloadIdentity" class="download-button">Download Identity File</button>
+        <button type="button" id="createNew" class="secondary-button">Create New Identity</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>
