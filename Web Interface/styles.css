@@ -1,63 +1,97 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f8ff; /* Light blue background */
-  color: #333;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
-.form-container {
-  background-color: #ffffff; /* White background for the form */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
   text-align: center;
-}
-
-.form-container h2 {
-  color: #1e90ff; /* Dodger blue */
   margin-bottom: 20px;
+  color: #333;
 }
 
-.form-container label {
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
   display: block;
-  margin: 10px 0 5px;
-  text-align: left;
-  color: #1e90ff; /* Dodger blue */
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container input[type="password"],
-.form-container input[type="date"] {
-  width: calc(100% - 22px);
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
-.form-container input[type="submit"] {
-  background-color: #1e90ff; /* Dodger blue */
+button {
+  background-color: #4CAF50;
   color: white;
+  padding: 10px 15px;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 16px;
+  margin-top: 10px;
 }
 
-.form-container input[type="submit"]:hover {
-  background-color: #1c86ee; /* Slightly darker blue */
+button:hover {
+  background-color: #45a049;
 }
 
-form * {
-  display: block;
-  margin: 10px;
+#changeEmail {
+  margin-top: 5px;
+  background-color: #008CBA;
+}
+
+#changeEmail:hover {
+  background-color: #007399;
+}
+
+.hidden {
+  display: none;
+}
+
+#identityDetails {
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 15px 0;
+  white-space: pre-line;
+}
+
+#downloadIdentity {
+  background-color: #ff9800;
+}
+
+#downloadIdentity:hover {
+  background-color: #f57c00;
+}
+
+#createNew {
+  background-color: #2196F3;
+}
+
+#createNew:hover {
+  background-color: #1976D2;
 }
